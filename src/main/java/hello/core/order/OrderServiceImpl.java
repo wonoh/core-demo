@@ -6,12 +6,16 @@ import hello.core.member.MemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy ) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 
     @Override

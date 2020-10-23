@@ -2,10 +2,14 @@ package hello.core.member;
 
 public class MemberServiceImpl implements MemberService{
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
+    }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 
     @Override
